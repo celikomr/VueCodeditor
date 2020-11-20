@@ -1,24 +1,24 @@
 ![npm](https://img.shields.io/npm/v/vue-codeditor)
 
-# vue-codedit
+# vue-codeditor
 
 Multi-language vue js code editor component running on the browser.
 
 ### Project setup
 ```
-npm install vue-codedit
+npm install vue-codeditor
 ```
 
 ### Usage
-##### Import vue-codedit component
+##### Import vue-codeditor component
 ```
 // main.js
 
 import Vue from 'vue'
 import App from './App.vue'
-import vueCodedit from "./components/vue-codedit.js";
+import vueCodeditor from "vue-codeditor/vue-codeditor.js";
 
-Vue.component(vueCodedit)
+Vue.component(vueCodeditor)
 ```
 ##### Usage in other components
 ```html
@@ -31,7 +31,7 @@ Vue.component(vueCodedit)
         * Id must be unique for each vue-codedit component
         * Each component must have its own content value.
     -->
-    <vue-codedit id="id" mode="javascript" theme="monokai" :content="content" @changeContent="changeContent" />
+    <vue-codeditor id="id" mode="javascript" theme="monokai" :content="content" @changeContent="changeContent" />
   </div>
 </template>
 
