@@ -1,0 +1,24 @@
+{
+  "name": "vue-codeditor",
+  "author": "Omer Celik",
+  "description": "Multi-language vue js code editor component running on the browser.",
+  "version": "1.0.0",
+  "keywords": ["vue js", "brace", "ace", "code editor", "browserify", "browser"],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "brace": "^0.11.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "~4.5.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
