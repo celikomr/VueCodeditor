@@ -11,12 +11,12 @@ npm install vue-codeditor
 
 ### Usage
 ##### Import vue-codeditor component
-```
+```javascript
 // main.js
 
-import Vue from 'vue'
-import App from './App.vue'
-import vueCodeditor from "vue-codeditor/vue-codeditor.js";
+import Vue from "vue"
+import App from "./App.vue"
+import vueCodeditor from "vue-codeditor";
 
 Vue.component(vueCodeditor)
 ```
@@ -28,10 +28,9 @@ Vue.component(vueCodeditor)
   <div id="app">
     <!-- 
         * Can be used in the loop (for multiple editor components)
-        * Id must be unique for each vue-codedit component
         * Each component must have its own content value.
     -->
-    <vue-codeditor id="id" mode="javascript" theme="monokai" :content="content" @changeContent="changeContent" />
+    <vue-codeditor v-model="content" mode="javascript" theme="chrome" />
   </div>
 </template>
 
@@ -43,16 +42,14 @@ export default {
       content: "console.log('Hello world!')",
     };
   },
-  methods: {
-    changeContent(val) {
-      if (this.content !== val) {
-        this.content = val;
-      }
-    },
-  },
 };
 </script>
 ```
+##### Component feature(s)
+
+* prob ```v-model``` is required
+* prob ```mode``` is optional | [ace theme(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/theme)
+* prob ```theme``` is optional | [ace mode(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/mode)
 
 ### Sample pictures
 
