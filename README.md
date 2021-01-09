@@ -31,6 +31,11 @@ Vue.component(vueCodeditor)
         * Each component must have its own content value.
     -->
     <vue-codeditor v-model="content" mode="javascript" theme="chrome" />
+
+    <!-- 
+        * If you want it to be readonly, you should use "readonly='true'" directly!
+    -->
+    <vue-codeditor v-model="content2" mode="html" theme="monokai" readonly="true"/>
   </div>
 </template>
 
@@ -40,18 +45,21 @@ export default {
   data() {
     return {
       content: "console.log('Hello world!')",
+      content2: "<h1>Hello world!</h1>",
     };
   },
 };
 </script>
 ```
-##### Component feature(s)
+#### Available Props
 
-* prob ```v-model``` is required
-* prob ```mode``` is optional | [ace theme(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/theme)
-* prob ```theme``` is optional | [ace mode(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/mode)
+| Prop| Default | Type | Description |
+| :---: | :---: | :---: | :---:|
+| ```mode``` | javascript | String | optional - [ace mode(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/mode) |
+| ```theme``` | chrome | String | optional - [ace theme(s)](https://github.com/ajaxorg/ace/tree/master/lib/ace/theme) |
+| ```readonly``` | false | Boolean | optional |
 
-### Sample pictures
+#### Sample pictures
 
 ![codedit_1](images/codedit_1.PNG)
 
@@ -67,3 +75,5 @@ Please make sure to update tests as appropriate.
 
 #### License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2020-present, Ömer Çelik 

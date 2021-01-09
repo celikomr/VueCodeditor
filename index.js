@@ -6,8 +6,8 @@ const component = Vue.component("vue-codeditor", {
         return h("div")
     },
 
-    // props ( value | mode | theme )
-    props: ["value", "mode", "theme"],
+    // props ( value | mode | theme | readonly)
+    props: ["value", "mode", "theme", "readonly"],
 
     // data ( editor | contentPre )
     data() {
@@ -17,7 +17,7 @@ const component = Vue.component("vue-codeditor", {
         }
     },
 
-    // watch ( value | theme | mode )
+    // watch ( value | theme | mode | readonly)
     watch: {
         value(value) {
             if (this.contentPre !== value) {
@@ -30,7 +30,10 @@ const component = Vue.component("vue-codeditor", {
         },
         mode(value) {
             this.editor.getSession().setMode(typeof value === "string" ? ("ace/mode/" + value) : value);
-        }
+        },
+        readonly(value) {
+            this.editor.setReadOnly(value);
+        },
     },
 
     // beforeDestroy
@@ -45,6 +48,7 @@ const component = Vue.component("vue-codeditor", {
         // set mode-xxx.js & theme-xxx.js
         const mode = this.mode || "javascript";
         const theme = this.theme || "chrome";
+        const readonly = this.readonly || null;
 
         // import brace & mode-xxx.js & theme-xxx.js
         const ace = require("brace");
@@ -55,6 +59,7 @@ const component = Vue.component("vue-codeditor", {
         const editor = vm.editor = ace.edit(this.$el);
         editor.getSession().setMode(typeof mode === "string" ? ("ace/mode/" + mode) : mode);
         editor.setTheme("ace/theme/" + theme);
+        editor.setReadOnly((readonly == "true") ? readonly : null);
         editor.setOptions({
             maxLines: Infinity,
         });
