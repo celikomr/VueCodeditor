@@ -26,9 +26,17 @@ const component = Vue.component("vue-codeditor", {
             }
         },
         theme(value) {
+            // import brace & theme-xxx.js
+            const ace = require("brace");
+            require("brace/theme/" + value);
+
             this.editor.setTheme("ace/theme/" + value);
         },
         mode(value) {
+			// import brace & mode-xxx.js
+            const ace = require("brace");
+            require("brace/mode/" + value);
+			
             this.editor.getSession().setMode(typeof value === "string" ? ("ace/mode/" + value) : value);
         },
         readonly(value) {

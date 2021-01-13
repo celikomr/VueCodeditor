@@ -2,7 +2,7 @@
   "name": "vue-codeditor",
   "author": "Omer Celik",
   "description": "Multi-language vue js code editor component running on the browser.",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "index.js",
   "license": "MIT",
   "keywords": ["vue js", "brace", "ace", "code editor", "browserify", "browser"],
